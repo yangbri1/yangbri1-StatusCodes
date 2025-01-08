@@ -14,10 +14,13 @@ public class JavalinSingleton {
     public static Javalin getInstance(){
         Javalin app = Javalin.create();
         
-
+        // Javalin Endpoint Handler - here to GET some data to client from endpoint '/client-side-err' at PORT app.start(9000) specified in App.java
         app.get("/client-side-err", ctx -> {
-        
+            
             //write logic here
+            // Note: 2nd parameter of app.get() is a lambda expression taking in (parameter list: 'ctx') -> expression (below)
+            // call upon .status() response method from Javalin's Context obj -- here to set status code to generic client-side (FE) error (400-499)
+            ctx.status(400);
             
         });
 

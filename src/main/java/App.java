@@ -20,6 +20,6 @@ public class App
     {
         Javalin app = JavalinSingleton.getInstance();
         
-        app.start(9000);
+        app.start(9000);    // start hunting for HTTP request methods at machine port 9000
     }
 }
